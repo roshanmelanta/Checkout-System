@@ -12,7 +12,7 @@ public class PricingRuleTests {
         assertEquals(new BigDecimal("0.50"), rule.calculatePrice(1));
         assertEquals(new BigDecimal("1.00"), rule.calculatePrice(2));
         assertEquals(new BigDecimal("2.50"), rule.calculatePrice(5));
-        assertEquals(BigDecimal.ZERO, rule.calculatePrice(0));
+        assertEquals(BigDecimal.ZERO.setScale(2), rule.calculatePrice(0));
     }
 
     @Test
@@ -24,6 +24,6 @@ public class PricingRuleTests {
         assertEquals(new BigDecimal("1.30"), rule.calculatePrice(3));
         assertEquals(new BigDecimal("1.80"), rule.calculatePrice(4));
         assertEquals(new BigDecimal("2.60"), rule.calculatePrice(6));
-        assertEquals(BigDecimal.ZERO, rule.calculatePrice(0));
+        assertEquals(BigDecimal.ZERO.setScale(2), rule.calculatePrice(0));
     }
 }
