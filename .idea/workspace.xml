@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d17f7d6f-6afd-4674-91c6-e146091d4b76" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdl/RegularPricingRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cdl/RegularPricingRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdl/SpecialPricingRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cdl/SpecialPricingRule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/cdl/PricingRuleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cdl/PricingRuleTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,5 +83,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/checkout_system$PricingRuleTests.ic" NAME="PricingRuleTests Coverage Results" MODIFIED="1726089623011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.cdl.*</FILTER>
+    </SUITE>
   </component>
 </project>
