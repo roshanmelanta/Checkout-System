@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d17f7d6f-6afd-4674-91c6-e146091d4b76" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdl/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cdl/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdl/PricingRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cdl/PricingRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdl/RegularPricingRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cdl/RegularPricingRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdl/SpecialPricingRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cdl/SpecialPricingRule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cdl/PricingRuleTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +40,28 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="PricingRuleTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="checkout-system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cdl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cdl" />
+      <option name="MAIN_CLASS_NAME" value="com.cdl.PricingRuleTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.PricingRuleTests" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
