@@ -57,10 +57,11 @@ public class Checkout {
         return total.setScale(2, RoundingMode.HALF_UP);
     }
 
-    /**
-     * Retrieves the quantity of a specific item in the cart.
-     * This method is used for testing purposes.
-     */
+    public void clear() {
+        cart.clear();
+    }
+
+    // For testing purpose
     int getQuantity(String sku) {
         return cart.getOrDefault(sku, 0);
     }
