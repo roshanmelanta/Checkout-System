@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d17f7d6f-6afd-4674-91c6-e146091d4b76" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdl/PricingRuleFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cdl/PricingRuleFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/cdl/PricingRuleFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cdl/PricingRuleFactoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cdl/PricingRuleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cdl/PricingRuleTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +40,51 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.PricingRuleFactoryTest">
+  <component name="RunManager" selected="JUnit.PricingRuleTests">
+    <configuration name="CheckoutSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cdl.CheckoutSystem" />
+      <module name="checkout-system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cdl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CheckoutTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="checkout-system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cdl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cdl" />
+      <option name="MAIN_CLASS_NAME" value="com.cdl.CheckoutTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CheckoutTest.testCheckoutTotal_MultipleRegularItems" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="checkout-system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cdl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cdl" />
+      <option name="MAIN_CLASS_NAME" value="com.cdl.CheckoutTest" />
+      <option name="METHOD_NAME" value="testCheckoutTotal_MultipleRegularItems" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PricingRuleFactoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="checkout-system" />
       <extension name="coverage">
@@ -53,22 +96,6 @@
       <option name="PACKAGE_NAME" value="com.cdl" />
       <option name="MAIN_CLASS_NAME" value="com.cdl.PricingRuleFactoryTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PricingRuleFactoryTest.testInvalidInputs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="checkout-system" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.cdl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.cdl" />
-      <option name="MAIN_CLASS_NAME" value="com.cdl.PricingRuleFactoryTest" />
-      <option name="METHOD_NAME" value="testInvalidInputs" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -90,9 +117,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PricingRuleFactoryTest" />
-        <item itemvalue="JUnit.PricingRuleFactoryTest.testInvalidInputs" />
         <item itemvalue="JUnit.PricingRuleTests" />
+        <item itemvalue="JUnit.PricingRuleFactoryTest" />
+        <item itemvalue="Application.CheckoutSystem" />
+        <item itemvalue="JUnit.CheckoutTest" />
+        <item itemvalue="JUnit.CheckoutTest.testCheckoutTotal_MultipleRegularItems" />
       </list>
     </recent_temporary>
   </component>
