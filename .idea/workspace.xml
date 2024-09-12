@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d17f7d6f-6afd-4674-91c6-e146091d4b76" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/cdl/PricingRuleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cdl/PricingRuleTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdl/CheckoutSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cdl/CheckoutSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdl/RegularPricingRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cdl/RegularPricingRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdl/SpecialPricingRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cdl/SpecialPricingRule.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +42,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.PricingRuleTests">
+  <component name="RunManager" selected="Application.CheckoutSystem">
     <configuration name="CheckoutSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cdl.CheckoutSystem" />
       <module name="checkout-system" />
@@ -117,9 +119,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CheckoutSystem" />
         <item itemvalue="JUnit.PricingRuleTests" />
         <item itemvalue="JUnit.PricingRuleFactoryTest" />
-        <item itemvalue="Application.CheckoutSystem" />
         <item itemvalue="JUnit.CheckoutTest" />
         <item itemvalue="JUnit.CheckoutTest.testCheckoutTotal_MultipleRegularItems" />
       </list>

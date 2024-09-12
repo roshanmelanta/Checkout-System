@@ -16,7 +16,7 @@ public class RegularPricingRule implements PricingRule{
      * @throws IllegalArgumentException if the unitPrice is negative.
      */
     public RegularPricingRule(BigDecimal unitPrice) {
-        if (unitPrice.compareTo(BigDecimal.ZERO) < 0) {
+        if (unitPrice == null || unitPrice.compareTo(BigDecimal.ZERO) < 0) {
             throw new IllegalArgumentException("Unit price cannot be negative");
         }
         this.unitPrice = unitPrice;

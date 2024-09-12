@@ -20,7 +20,7 @@ public class SpecialPricingRule implements PricingRule{
      * @throws IllegalArgumentException if any of the parameters are invalid.
      */
     public SpecialPricingRule(BigDecimal unitPrice, int specialQuantity, BigDecimal specialPrice) {
-        if (unitPrice.compareTo(BigDecimal.ZERO) < 0 || specialQuantity <= 0 || specialPrice.compareTo(BigDecimal.ZERO) < 0) {
+        if (unitPrice.compareTo(BigDecimal.ZERO) <= 0 || specialQuantity <= 0 || specialPrice.compareTo(BigDecimal.ZERO) <= 0) {
             throw new IllegalArgumentException("Invalid parameters for SpecialPricingRule");
         }
         this.unitPrice = unitPrice;
