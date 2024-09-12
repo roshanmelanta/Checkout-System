@@ -16,10 +16,6 @@ class PricingRuleTests {
     @Nested
     class RegularPricingRuleTest {
 
-        /**
-         * Tests the basic functionality of RegularPricingRule.
-         * Verifies correct price calculation for various quantities.
-         */
         @ParameterizedTest
         @CsvSource({
                 "0.50, 1, 0.50",
@@ -34,10 +30,6 @@ class PricingRuleTests {
             assertEquals(expectedTotal, rule.calculatePrice(quantity));
         }
 
-        /**
-         * Tests edge cases for RegularPricingRule.
-         * Verifies behavior with zero quantity and very large quantities.
-         */
         @Test
         void testRegularPricingEdgeCases() {
             PricingRule rule = new RegularPricingRule(new BigDecimal("0.50"));
@@ -45,10 +37,6 @@ class PricingRuleTests {
             assertEquals(new BigDecimal("50000.00").setScale(2), rule.calculatePrice(100000));
         }
 
-        /**
-         * Tests invalid inputs for RegularPricingRule.
-         * Verifies that appropriate exceptions are thrown for invalid constructor arguments and method parameters.
-         */
         @Test
         void testRegularPricingInvalidInputs() {
             assertThrows(IllegalArgumentException.class, () -> new RegularPricingRule(new BigDecimal("-0.01")));
@@ -60,10 +48,6 @@ class PricingRuleTests {
     @Nested
     class SpecialPricingRuleTest {
 
-        /**
-         * Tests the basic functionality of SpecialPricingRule.
-         * Verifies correct price calculation for various quantities, including special price application.
-         */
         @ParameterizedTest
         @CsvSource({
                 "0.50, 3, 1.30, 1, 0.50",
@@ -79,10 +63,6 @@ class PricingRuleTests {
             assertEquals(expectedTotal, rule.calculatePrice(quantity));
         }
 
-        /**
-         * Tests edge cases for SpecialPricingRule.
-         * Verifies behavior with zero quantity and very large quantities.
-         */
         @Test
         void testSpecialPricingEdgeCases() {
             PricingRule rule = new SpecialPricingRule(new BigDecimal("0.50"), 3, new BigDecimal("1.30"));
@@ -90,10 +70,6 @@ class PricingRuleTests {
             assertEquals(new BigDecimal("43333.40"), rule.calculatePrice(100000));  // 33333 * 1.30 + 1 * 0.50
         }
 
-        /**
-         * Tests invalid inputs for SpecialPricingRule.
-         * Verifies that appropriate exceptions are thrown for invalid constructor arguments and method parameters.
-         */
         @Test
         void testSpecialPricingInvalidInputs() {
             assertThrows(IllegalArgumentException.class,
@@ -107,10 +83,6 @@ class PricingRuleTests {
             assertThrows(IllegalArgumentException.class, () -> rule.calculatePrice(-1));
         }
 
-        /**
-         * Tests special cases where the special price is not actually a discount.
-         * Verifies that the rule still works correctly in these scenarios.
-         */
         @Test
         void testSpecialPricingNonDiscountCases() {
             PricingRule higherSpecialPrice = new SpecialPricingRule(new BigDecimal("0.50"), 3, new BigDecimal("2.00"));
