@@ -7,6 +7,10 @@ import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Comprehensive test suite for PricingRuleFactory implementations.
+ * Covers various scenarios and edge cases.
+ */
 class PricingRuleFactoryTest {
 
     private PricingRuleFactory factory;
@@ -17,23 +21,41 @@ class PricingRuleFactoryTest {
     }
 
     /**
-     * Test adding a pricing rule and then retrieving it.
+     * Test adding multiple pricing rules and retrieving them.
      */
     @Test
-    void testAddAndGetPricingRule() {
-        PricingRule rule = new MockPricingRule();
-        factory.addPricingRule("A", rule);
-        assertEquals(rule, factory.getPricingRule("A"), "Should return the correct rule for SKU A");
+    void testAddMultiplePricingRules() {
+        PricingRule rule1 = new MockPricingRule();
+        PricingRule rule2 = new MockPricingRule();
+        factory.addPricingRule("A", rule1);
+        factory.addPricingRule("B", rule2);
+        assertEquals(rule1, factory.getPricingRule("A"));
+        assertEquals(rule2, factory.getPricingRule("B"));
     }
 
     /**
-     * Test the hasRule method for both existing and non-existing SKUs.
+     * Test checking that the class properly handles invalid inputs (null and empty strings) for all methods.
+     */
+    @Test
+    void testInvalidInputs() {
+        PricingRule rule = new MockPricingRule();
+
+        assertThrows(NullPointerException.class, () -> factory.addPricingRule(null, rule));
+        assertThrows(IllegalArgumentException.class, () -> factory.addPricingRule("", rule));
+        assertThrows(NullPointerException.class, () -> factory.addPricingRule("A", null));
+
+        assertThrows(NullPointerException.class, () -> factory.getPricingRule(null));
+        assertThrows(NullPointerException.class, () -> factory.hasRule(null));
+    }
+
+    /**
+     * Test checking if a rule exists for a SKU.
      */
     @Test
     void testHasRule() {
         factory.addPricingRule("A", new MockPricingRule());
-        assertTrue(factory.hasRule("A"), "Should return true for existing SKU");
-        assertFalse(factory.hasRule("B"), "Should return false for non-existent SKU");
+        assertTrue(factory.hasRule("A"));
+        assertFalse(factory.hasRule("B"));
     }
 
     /**

@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d17f7d6f-6afd-4674-91c6-e146091d4b76" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/cdl/PricingRuleFactoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cdl/PricingRuleFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cdl/PricingRuleFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cdl/PricingRuleFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cdl/PricingRuleFactoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +57,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PricingRuleFactoryTest.testInvalidInputs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="checkout-system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cdl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cdl" />
+      <option name="MAIN_CLASS_NAME" value="com.cdl.PricingRuleFactoryTest" />
+      <option name="METHOD_NAME" value="testInvalidInputs" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PricingRuleTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="checkout-system" />
       <extension name="coverage">
@@ -75,6 +91,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.PricingRuleFactoryTest" />
+        <item itemvalue="JUnit.PricingRuleFactoryTest.testInvalidInputs" />
         <item itemvalue="JUnit.PricingRuleTests" />
       </list>
     </recent_temporary>
@@ -102,7 +119,13 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/checkout_system$PricingRuleFactoryTest.ic" NAME="PricingRuleFactoryTest Coverage Results" MODIFIED="1726102501622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.cdl.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/checkout_system$PricingRuleTests.ic" NAME="PricingRuleTests Coverage Results" MODIFIED="1726089774971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.cdl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/checkout_system$PricingRuleFactoryTest_testInvalidInputs.ic" NAME="PricingRuleFactoryTest.testInvalidInputs Coverage Results" MODIFIED="1726102489692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.cdl.*</FILTER>
     </SUITE>
   </component>
