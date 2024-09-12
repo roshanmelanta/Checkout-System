@@ -1,6 +1,63 @@
-# Checkout System
+# CDL Checkout System
 
 This project implements a checkout system for a supermarket, handling various pricing schemes including special offers.
+
+## UML Class Diagram
+
+```mermaid
+classDiagram
+    class Item {
+        -String sku
+        +String getSku()
+    }
+
+    class PricingRule {
+        <<interface>>
+        +BigDecimal calculatePrice(int quantity)
+    }
+
+    class RegularPricingRule {
+        -BigDecimal unitPrice
+        +BigDecimal calculatePrice(int quantity)
+    }
+
+    class SpecialPricingRule {
+        -BigDecimal unitPrice
+        -int specialQuantity
+        -BigDecimal specialPrice
+        +BigDecimal calculatePrice(int quantity)
+    }
+
+    class Checkout {
+        -Map<String, Integer> cart
+        -PricingRuleFactory pricingRuleFactory
+        +void scan(String sku)
+        +BigDecimal calculateTotal()
+        +void clear()
+    }
+
+    class PricingRuleFactory {
+        -Map<String, PricingRule> rules
+        +PricingRule getPricingRule(String sku)
+        +void addPricingRule(String sku, PricingRule rule)
+        +boolean hasRule(String sku)
+    }
+
+    class CheckoutSystem {
+        -Scanner scanner
+        -Checkout checkout
+        +void start()
+        -void initializePricingRules()
+    }
+
+    PricingRule <|.. RegularPricingRule
+    PricingRule <|.. SpecialPricingRule
+    Checkout --> PricingRuleFactory
+    Checkout --> Item
+    CheckoutSystem --> Checkout
+    PricingRuleFactory --> PricingRule
+```
+
 
 ## Prerequisites
 
