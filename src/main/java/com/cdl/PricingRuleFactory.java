@@ -5,8 +5,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * Factory for creating and managing pricing rules.
- * This class provides methods to add, retrieve, and check for pricing rules associated with SKUs.
+ * Factory for creating and managing pricing rules associated with SKUs.
  */
 public class PricingRuleFactory {
     private final Map<String, PricingRule> rules = new HashMap<>();
