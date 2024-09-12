@@ -2,22 +2,52 @@ package com.cdl;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import static org.mockito.Mockito.*;
 
 import java.math.BigDecimal;
 
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Unit tests for the Checkout class.
+ * Tests various scenarios including scanning items, calculating totals,
+ * and handling special pricing rules.
+ */
 public class CheckoutTest {
     private Checkout checkout;
     private PricingRuleFactory pricingRuleFactory;
 
+    @Mock
+    private RegularPricingRule regularPricingRule;
+
+    @Mock
+    private SpecialPricingRule specialPricingRule;
+
     @BeforeEach
     void setUp() {
+        MockitoAnnotations.openMocks(this);
+
         pricingRuleFactory = new PricingRuleFactory();
-        // Add some mock pricing rules
-        pricingRuleFactory.addPricingRule("A", new MockPricingRule(BigDecimal.valueOf(50)));
-        pricingRuleFactory.addPricingRule("B", new MockPricingRule(BigDecimal.valueOf(30)));
+
+        // Set up regular pricing rule
+        when(regularPricingRule.calculatePrice(anyInt())).thenAnswer(invocation -> {
+            int quantity = invocation.getArgument(0);
+            return BigDecimal.valueOf(0.50).multiply(BigDecimal.valueOf(quantity));
+        });
+        pricingRuleFactory.addPricingRule("A", regularPricingRule);
+
+        // Set up special pricing rule (3 for 130)
+        when(specialPricingRule.calculatePrice(anyInt())).thenAnswer(invocation -> {
+            int quantity = invocation.getArgument(0);
+            int specialDeals = quantity / 3;
+            int remainder = quantity % 3;
+            return BigDecimal.valueOf(1.30).multiply(BigDecimal.valueOf(specialDeals))
+                    .add(BigDecimal.valueOf(0.50).multiply(BigDecimal.valueOf(remainder)));
+        });
+        pricingRuleFactory.addPricingRule("B", specialPricingRule);
+
         checkout = new Checkout(pricingRuleFactory);
     }
 
@@ -28,23 +58,43 @@ public class CheckoutTest {
     }
 
     @Test
-    void testCheckoutTotal_SingleItem() {
-        checkout.scan("A");
-        assertEquals(BigDecimal.valueOf(50), checkout.calculateTotal());
+    void testScan_InvalidSKU() {
+        assertThrows(IllegalArgumentException.class, () -> checkout.scan("X"));
     }
 
-    // Mock PricingRule for testing purposes
-    private static class MockPricingRule implements PricingRule {
-        private final BigDecimal price;
+    @Test
+    void testScan_EmptySKU() {
+        assertThrows(IllegalArgumentException.class, () -> checkout.scan(""));
+    }
 
-        MockPricingRule(BigDecimal price) {
-            this.price = price;
-        }
+    @Test
+    void testCheckoutTotal_EmptyCart() {
+        assertEquals(BigDecimal.ZERO.setScale(2), checkout.calculateTotal());
+    }
 
-        @Override
-        public BigDecimal calculatePrice(int quantity) {
-            return price.multiply(BigDecimal.valueOf(quantity));
-        }
+    @Test
+    void testCheckoutTotal_MultipleRegularItems() {
+        checkout.scan("A");
+        checkout.scan("A");
+        assertEquals(BigDecimal.valueOf(1.00).setScale(2), checkout.calculateTotal());
+    }
+
+    @Test
+    void testCheckoutTotal_SpecialDeal() {
+        checkout.scan("B");
+        checkout.scan("B");
+        checkout.scan("B");
+        assertEquals(BigDecimal.valueOf(1.30).setScale(2), checkout.calculateTotal());
+    }
+
+    @Test
+    void testCheckoutTotal_MixedItems() {
+        checkout.scan("A");
+        checkout.scan("B");
+        checkout.scan("B");
+        checkout.scan("A");
+        checkout.scan("B");
+        assertEquals(BigDecimal.valueOf(2.30).setScale(2), checkout.calculateTotal());
     }
 
     // Helper method to get the quantity of an item in the cart
