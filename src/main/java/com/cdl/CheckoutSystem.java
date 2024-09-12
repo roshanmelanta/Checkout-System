@@ -3,6 +3,9 @@ package com.cdl;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
+/**
+ * Manages the checkout process for the Checkout System.
+ */
 public class CheckoutSystem {
     private final Scanner scanner;
     private final Checkout checkout;
@@ -12,14 +15,17 @@ public class CheckoutSystem {
         this.checkout = new Checkout(pricingRuleFactory);
     }
 
+    /**
+     * Starts the checkout process, handling user input and displaying totals.
+     */
     public void start() {
-        System.out.println("Welcome to the CDL Checkout System");
+        System.out.println("Welcome to the Checkout System");
         System.out.println("Enter items (A, B, C, D) one by one. Type 'done' to finish or 'quit' to exit:");
 
         while (true) {
             String input = scanner.nextLine().trim().toUpperCase();
             if (input.equals("QUIT")) {
-                System.out.println("Thank you for using CDL Checkout System. Goodbye!");
+                System.out.println("Thank you for using Checkout System. Goodbye!");
                 break;
             } else if (input.equals("DONE")) {
                 displayTotal();
@@ -50,6 +56,11 @@ public class CheckoutSystem {
         checkoutSystem.start();
     }
 
+    /**
+     * Initializes the pricing rules for the checkout system.
+     *
+     * @return A PricingRuleFactory with predefined rules.
+     */
     private static PricingRuleFactory initializePricingRules() {
         PricingRuleFactory factory = new PricingRuleFactory();
         factory.addPricingRule("A", new SpecialPricingRule(new BigDecimal("0.50"), 3, new BigDecimal("1.30")));
