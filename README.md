@@ -1,4 +1,4 @@
-# CDL Checkout System
+# Checkout System
 
 This project implements a checkout system for a supermarket, handling various pricing schemes including special offers.
 
