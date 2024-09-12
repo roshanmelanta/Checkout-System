@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d17f7d6f-6afd-4674-91c6-e146091d4b76" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cdl/CheckoutTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdl/PricingRuleFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cdl/PricingRuleFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/cdl/PricingRuleFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cdl/PricingRuleFactoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdl/Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cdl/Checkout.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +41,22 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.PricingRuleFactoryTest">
+  <component name="RunManager" selected="JUnit.CheckoutTest">
+    <configuration name="CheckoutTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="checkout-system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cdl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cdl" />
+      <option name="MAIN_CLASS_NAME" value="com.cdl.CheckoutTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PricingRuleFactoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="checkout-system" />
       <extension name="coverage">
@@ -90,6 +105,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CheckoutTest" />
         <item itemvalue="JUnit.PricingRuleFactoryTest" />
         <item itemvalue="JUnit.PricingRuleFactoryTest.testInvalidInputs" />
         <item itemvalue="JUnit.PricingRuleTests" />
